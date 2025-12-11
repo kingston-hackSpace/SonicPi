@@ -50,4 +50,22 @@ The following installation instructions are based on [SonicPi GitHub](https://gi
   ./linux-build-all.sh
   ```
 
+- Run SonicPi:
+  ```
+  cd ~/Development/sonic-pi/app/gui/qt
+  ./sonic-pi
+  ```
+
+- Let's create a short-cut
+  ```
+  sudo ln -s ~/Development/sonic-pi/app/gui/qt/sonic-pi /usr/local/bin/sonic-pi
+  ```
+
+- Now you can just open the Terminal and type:
+  ```
+  sonic-pi
+  ```
+  
+  
+
   
