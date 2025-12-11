@@ -39,3 +39,15 @@ The following installation instructions are based on [SonicPi GitHub](https://gi
   ```
   git clone https://github.com/sonic-pi-net/sonic-pi.git ~/Development/sonic-pi
   ```
+
+- Go to the app directory:
+  ```
+  cd ~/Development/sonic-pi/app
+  ```
+
+- Run the build-all script for Linux. This step can take ome time (about 1hr):
+  ```
+  ./linux-build-all.sh
+  ```
+
+  
