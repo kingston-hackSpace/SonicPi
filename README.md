@@ -58,7 +58,7 @@ The following installation instructions are based on [SonicPi GitHub](https://gi
 
 - Let's create a short-cut
   ```
-  sudo ln -s ~/Development/sonic-pi/app/gui/qt/sonic-pi /usr/local/bin/sonic-pi
+  sudo ln -s ~/Development/sonic-pi/app/build/gui/sonic-pi /usr/local/bin/sonic-pi
   ```
 
 - Now you can just open the Terminal and type:
