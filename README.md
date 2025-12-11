@@ -17,8 +17,9 @@ The following installation instructions are based on [SonicPi GitHub](https://gi
   ```
 
 - Install essential audio packages:
+
   ```
-sudo apt-get install -y build-essential git libssl-dev ruby-dev elixir erlang-dev erlang-xmerl supercollider-server sc3-plugins-server alsa-utils libasound2-dev cmake ninja-build pipewire-jack libspa-0.2-jack libwayland-dev libxkbcommon-dev libegl1-mesa-dev libx11-dev libxft-dev libxext-dev qpwgraph compton m4 libaubio-dev libpng-dev libboost-all-dev librtmidi-dev
+  sudo apt-get install -y build-essential git libssl-dev ruby-dev elixir erlang-dev erlang-xmerl supercollider-server sc3-plugins- server alsa-utils libasound2-dev cmake ninja-build pipewire-jack libspa-0.2-jack libwayland-dev libxkbcommon-dev libegl1-mesa-dev libx11-dev libxft-dev libxext-dev qpwgraph compton m4 libaubio-dev libpng-dev libboost-all-dev librtmidi-dev
   ```
 
 - Install Qt5 packages:
@@ -31,7 +32,7 @@ sudo apt-get install -y build-essential git libssl-dev ruby-dev elixir erlang-de
   qmake --version
   ```
 
-- Expected output should show Qt version 3.x. This confirms the development tools are ready.
+- This confirms the development tools are ready.
 
 - Clone SonicPi source code from github:
 
