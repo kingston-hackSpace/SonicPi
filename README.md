@@ -12,9 +12,20 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 Before diving into audio programming, let's ensure your Raspberry Pi is outputting sound correctly. Please [follow this instructions](https://github.com/kingston-hackSpace/SonicPi/blob/main/TestingSound.md)
 
 ----
+First:
+
+
+
+
+
+----
 # Install SonicPi for RASPBERRY PI 
 
-- Run your Raspberry Pi, which should be also connected to the internet. 
+- Run your Raspberry Pi, which should be also connected to the internet.
+
+- sudo apt update
+
+- sudo apt install pulseaudio-utils
 
 - Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb). Last update: Dec 2025.
 
@@ -26,6 +37,8 @@ Before diving into audio programming, let's ensure your Raspberry Pi is outputti
 
 - Let the software to start.
 
+
+
 ----
 # HDMI output
 
@@ -34,8 +47,32 @@ Before diving into audio programming, let's ensure your Raspberry Pi is outputti
 ----
 # CHANGING THE AUDIO OUTPUT PATH. 
 
-Unlike for other applications, right clicking the volume control on the Raspberry Pi menu bar will not change the audio destination for Sonic Pi. Instead, you can use a program **qpwgraph** which the installer adds to the Audio Section of the Application Menu. Read more about it [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
+Unlike for other applications, right clicking the volume control on the Raspberry Pi menu bar will not change the audio destination for Sonic Pi. Instead, you can use a program **qpwgraph** which the installer adds to the Audio Section of the Application Menu. 
 
+Read more [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
+
+
+Why qpwgraph is required
+
+Sonic Pi relies on SuperCollider to generate audio.
+
+PipeWire only creates SuperCollider audio nodes when qpwgraph is running.
+
+Without qpwgraph open, Sonic Pi produces no sound — even if the patch is saved or routing rules exist.
+
+This is why the next steps involve configuring qpwgraph to connect SuperCollider to the headphone jack or other outputs.
+
+
+----
+# Find your sound device
+
+- type: aplay -l
+
+- find the card of your speaker. shoudl be something like:
+
+card 2: headphones [bcm2835 headphones], device 0: bcm2835 headphones subdevices: 8/8
+
+- Identify the card corresponding to your speaker if needed for troubleshooting. No further action here. 
 
 ----
 # Configurating qpwgraph 
@@ -59,7 +96,7 @@ Unlike for other applications, right clicking the volume control on the Raspberr
 - If you need further help, please watch [this video tutorial](https://www.youtube.com/watch?v=d5MhUZHZ1uw)
 
 ----
-# Saving a qpwgraph to speaker route
+# Saving a qpwgraph route
 
 - Create a folder called qpwgraph, located at .config
 
