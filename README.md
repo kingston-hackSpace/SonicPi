@@ -14,7 +14,7 @@ Before diving into audio programming, let's ensure your Raspberry Pi is outputti
 ----
 # Install SonicPi for RASPBERRY PI 
 
-The following installation instructions are based on [SonicPi GitHub](https://github.com/sonic-pi-net/sonic-pi/blob/dev/BUILD-LINUX.md)
+The following installation instructions are based on [this guide to install SonicPi on a RPi](https://github.com/sonic-pi-net/sonic-pi/blob/dev/BUILD-RASPBERRY-PI.md)
 
 - Open the terminal, type:
   ```
