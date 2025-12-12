@@ -39,14 +39,23 @@ nano ~/.config/pipewire/media-session.d/default-connections.conf
 
 
 context.modules = [
+
    {
+   
         name = libpipewire-module-loopback
+        
         args = {
+        
             node.name = "supercollider-output"
+            
             node.description = "SuperCollider to Headphone Jack"
+            
             target = "alsa_output.hw_2_0"
+            
         }
+        
     }
+    
 ]
 
 
