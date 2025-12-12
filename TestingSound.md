@@ -1,42 +1,42 @@
-# Testing Sound output from RPi
+# Testing Sound Output from Your Raspberry Pi
 
-Follow the Sound-Test instruction depending on your RPi model:
-
-----
-# RPi 4B
+Follow the sound test instructions based on your Raspberry Pi model.
 
 ----
-# RPi 5 
+# RPi 4B - Hardware
 
-- NO JACK: The lastest RPi model 5 doesnt have a jack output as previous models.
+----
+# RPi 5 - Hardware
 
-- USB SPEAKER: Ideally, use a speaker with USB connection such as [this](https://thepihut.com/products/mini-external-usb-stereo-speaker). The RPi shoudl automatically recognize it and play sound with it.
+- NO HEADPHONE JACK: The lastest RPi model5 doesn't have a jack output like previous models.
 
-- BLUETOOH:
+- USB SPEAKER: Ideally, use a speaker with USB connection such as [this](https://thepihut.com/products/mini-external-usb-stereo-speaker). The Raspberry Pi should automatically recognise it and play sound through it.
 
-  - Locate the Bluetooth icon at the top right of the screen and do left click > Add Device...
+- BLUETOOH SPEAKER:
+
+  1. Click the Bluetooth icon at the top right of the screen and select Add Device…
  
-  - Select your speaker and Pair
+  2. Select your speaker and choose Pair.
  
-  - Confirm Pairing as instructed
+  3. Confirm Pairing as instructed on screen.
  
-  - You should get the following message: "Pairing Successfull - ** right-click the volume icon to select as audio device**"
+  4. You should see the message: "Pairing Successfull - ** right-click the volume icon to select as audio device**"
  
-  - Right click on your Audio Icon (top right of the screen) and select your device
+  5. Right-click the audio icon (top right) and select your Bluetooth device.
  
-  - Test audio:
+  6. Further configuration **PENDING**
+
+*Note:* Bluetooth connections are not recommended for live performances, as they can be unstable.
+ 
+----
+# AUDIO TEST
+
+  - Open your terminal and type:
+
     ```
     aplay /usr/share/sounds/alsa/Front_Center.wav
     ```
-  - Run Sonic Pi and Test audio using an example, or just "play 60"
+
+- The Raspberry Pi should play a sound that says "Front Center."
  
-  - If you don't get any audio, your need further configurations
- 
-  - Install pavucontrol:
-    ```
-    sudo apt install pavucontrol -y
-    ```
-  - 
-    
- 
-  Note: Bluetooth connections are not advice for life performances as they can be unstable. 
+
