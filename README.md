@@ -2,45 +2,14 @@
 
 Sonic Pi is an open source programming environment originally designed to explore and teach programming concepts within schools through the process of creating new sounds.
 
+It is also widely used by hobbyists, musicians, and educators for live coding performances, music composition, sound experimentation, and learning programming in a fun, interactive way.
+
 Visit [sonic-pi.net](https://sonic-pi.net/)
 
 ----
 # Test sound in yout Raspberry Pi
 
-**RPi model 5:** 
-
-- NO JACK: The lastest RPi model 5 doesnt have a jack output as previous models.
-
-- USB SPEAKER: Ideally, use a speaker with USB connection such as [this](https://thepihut.com/products/mini-external-usb-stereo-speaker). The RPi shoudl automatically recognize it and play sound with it.
-
-- BLUETOOH:
-
-  - Locate the Bluetooth icon at the top right of the screen and do left click > Add Device...
- 
-  - Select your speaker and Pair
- 
-  - Confirm Pairing as instructed
- 
-  - You should get the following message: "Pairing Successfull - ** right-click the volume icon to select as audio device**"
- 
-  - Right click on your Audio Icon (top right of the screen) and select your device
- 
-  - Test audio:
-    ```
-    aplay /usr/share/sounds/alsa/Front_Center.wav
-    ```
-  - Run Sonic Pi and Test audio using an example, or just "play 60"
- 
-  - If you don't get any audio, your need further configurations
- 
-  - Install pavucontrol:
-    ```
-    sudo apt install pavucontrol -y
-    ```
-  - 
-    
- 
-  Note: Bluetooth connections are not advice for life performances as they can be unstable. 
+Before diving into audio programming, let's ensure your Raspberry Pi is outputting sound correctly. Please [follow this instructions](https://github.com/kingston-hackSpace/SonicPi/blob/main/TestingSound.md)
 
 ----
 # Install SonicPi for RASPBERRY PI 
