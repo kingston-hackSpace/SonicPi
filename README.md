@@ -14,63 +14,42 @@ Before diving into audio programming, let's ensure your Raspberry Pi is outputti
 ----
 # Install SonicPi for RASPBERRY PI 
 
-The following installation instructions are based on [this guide to install SonicPi on a RPi](https://github.com/sonic-pi-net/sonic-pi/blob/dev/BUILD-RASPBERRY-PI.md) and assume a **Debian 64-bit** configuration.
+- Run your Raspberry Pi, which should be also connected to the internet. 
 
-- Open the terminal, type:
-  ```
-  sudo apt update
-  ```
+- Open your RPi browser (top left icon) and open [this link](https://sonic-pi.net/#rp). It might take some seconds to 
 
-- Install essential audio packages:
+- Download the option "64 bit package" from [this link]
 
-  ```
-  sudo apt-get install -y build-essential git libssl-dev ruby-dev elixir erlang-dev erlang-xmerl supercollider-server sc3-plugins- server alsa-utils libasound2-dev cmake ninja-build pipewire-jack libspa-0.2-jack libwayland-dev libxkbcommon-dev libegl1-mesa-dev libx11-dev libxft-dev libxext-dev qpwgraph compton m4 libaubio-dev libpng-dev libboost-all-dev librtmidi-dev
-  ```
 
-- Install Qt5 packages:
-  ```
-  sudo apt install -y qtbase5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev libqt5opengl5-dev
-  ```
+-------------
 
-- Check that Qt5 was installed properlly
-  ```
-  qmake --version
-  ```
+- By default the Sonic-Pi sound output will be connected to HDMI and can be heard in the speakers
+in your monitor.
 
-- This confirms the development tools are ready.
+- CHANGING THE AUDIO OUTPUT PATH. Unlike for other applications,right clicking the volume control on the Raspberry Pi menu bar will not change the audio destination for Sonic Pi. Instead, you can use a program qpwgraph which the installer adds to the Audio Section of the Application Menu. Read more about it [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
 
-- Clone SonicPi source code from github:
+- Further help? See [this video tutorial](https://www.youtube.com/watch?v=d5MhUZHZ1uw)
 
-  ```
-  git clone https://github.com/sonic-pi-net/sonic-pi.git ~/Development/sonic-pi
-  ```
+- or:
 
-- Go to the app directory:
-  ```
-  cd ~/Development/sonic-pi/app
-  ```
+- route:
 
-- Run the build-all script for Linux. This step can take ome time (about 1hr):
-  ```
-  ./linux-build-all.sh
-  ```
+mkdir -p ~/.config/pipewire/media-session.d
+nano ~/.config/pipewire/media-session.d/default-connections.conf
 
-- Run SonicPi:
-  ```
-  cd ~/Development/sonic-pi/app/gui/qt
-  ./sonic-pi
-  ```
 
-- Let's create a short-cut
-  ```
-  sudo ln -s ~/Development/sonic-pi/app/build/gui/sonic-pi /usr/local/bin/sonic-pi
-  ```
+context.modules = [
+   {
+        name = libpipewire-module-loopback
+        args = {
+            node.name = "supercollider-output"
+            node.description = "SuperCollider to Headphone Jack"
+            target = "alsa_output.hw_2_0"
+        }
+    }
+]
 
-- Now you can just open the Terminal and type:
-  ```
-  sonic-pi
-  ```
-  
+
   
 
   
