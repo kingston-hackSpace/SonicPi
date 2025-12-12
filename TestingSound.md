@@ -1,6 +1,12 @@
 # Testing Sound output from RPi
 
-**RPi model 5:** 
+Follow the Sound-Test instruction depending on your RPi model:
+
+----
+# RPi 4B
+
+----
+# RPi 5 
 
 - NO JACK: The lastest RPi model 5 doesnt have a jack output as previous models.
 
