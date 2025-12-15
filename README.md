@@ -31,7 +31,7 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 - Open this tutorial directly in your RPi's browser
 
-- Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb)
+- Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb). A installation package should automaticallty download. 
 
 - Open File Manager (the yelow folder icon located at the top left of the screen)
 
@@ -41,9 +41,14 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 - Right-click on it and select *Package Install*. Confirm the installation. You will be asked for the RPi's password, type *pi* (password if you followed previous hackSpace's RPi installation settings)
 
-- Let the software to start.
+- Wait until the package is intalled.
 
+- Open Sonic Pi using the Terminal by typing:
 
+          sonic-pi
+- 
+
+  
 
 ----
 # HDMI output
