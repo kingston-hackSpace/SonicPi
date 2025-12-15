@@ -1,15 +1,13 @@
 # SonicPi
 
-**Sonic Pi** is an open source programming environment originally designed to explore and teach programming concepts within schools through the process of creating new sounds.
-
-It is also widely used by hobbyists, musicians, and educators for live coding performances, music composition, sound experimentation, and learning programming in a fun, interactive way.
+**Sonic Pi** is an open source programming environment designed to explore programming through creating sounds. It is widely used by hobbyists, musicians, and educators for live coding performances, music composition and sound experimentation.
 
 Visit [sonic-pi.net](https://sonic-pi.net/)
 
 ----
 # First steps:
 
-- Turn on your Raspberry Pi, which should be connected to the internet.
+- Turn on your Raspberry Pi and make sure it’s connected to the internet.
 
 - Open the terminal and type:
 
@@ -27,114 +25,121 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 
 ----
-# Install SonicPi for RASPBERRY PI 
+# Installing Sonic Pi on RASPBERRY PI 
 
 - Open this tutorial directly in your RPi's browser
 
-- Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb). A installation package should automaticallty download. 
+- Download the SonicPi 64-bitpackage using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb). The installation package should download automatically.
 
-- Open File Manager (the yelow folder icon located at the top left of the screen)
+- Open the File Manager (yellow folder icon at the top-left of the desktop)
 
-- Locate the *Downloads* directory
+- Locate the *Downloads* folder
 
 - In your Downloads, you should see a .zip file titled "sonic-pi_4.6.0_2_trixie.arm64.deb"
 
-- Right-click on it and select *Package Install*. Confirm the installation. You will be asked for the RPi's password, type *pi* (password if you followed previous hackSpace's RPi installation settings)
+- Right-click on it and select *Package Install*. Confirm the installation. You will be asked for the RPi's password, type *pi* ("pi" should be your password if you followed previous hackSpace's instructions)
 
-- Wait until the package is intalled.
+- Wait for the installation to complete.
 
 - Open Sonic Pi using the Terminal by typing:
 
           sonic-pi
-- 
-
   
+- Test Sonic Pi.
+
+- If you don't get any audio, follow the instructions below. 
+
 
 ----
 # HDMI output
 
-- By default the Sonic-Pi sound output will be connected to HDMI and can be heard in the speakers in your monitor.
+- By default, Sonic Pi outputs audio through HDMI. If your monitor has built-in speakers, you will hear the sound there.
+
+- If you want to use external speakers via the Raspberry Pi’s 3.5 mm jack, additional setup is required.
   
 ----
-# CHANGING THE AUDIO OUTPUT PATH. 
+# CHANGING THE AUDIO OUTPUT PATH
 
-Unlike for other applications, right clicking the volume control on the Raspberry Pi menu bar will not change the audio destination for Sonic Pi. Instead, you can use a program **qpwgraph** which the installer adds to the Audio Section of the Application Menu. 
-
-Read more [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
+- Sonic Pi relies on [SuperCollider](https://supercollider.github.io/) to generate audio. On recent Raspberry Pi OS versions, SuperCollider may not automatically find a playable output. To route audio to your speakers, you need to configure the output manually using **qpwgraph**. Read more [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
 
 
-Why qpwgraph is required
+**Why qpwgraph is required:**
 
-Sonic Pi relies on SuperCollider to generate audio.
+- Sonic Pi relies on SuperCollider to generate audio.
 
-PipeWire only creates SuperCollider audio nodes when qpwgraph is running.
+- PipeWire only creates SuperCollider audio nodes when qpwgraph is running.
 
-Without qpwgraph open, Sonic Pi produces no sound — even if the patch is saved or routing rules exist.
-
-This is why the next steps involve configuring qpwgraph to connect SuperCollider to the headphone jack or other outputs.
+- Without qpwgraph open, Sonic Pi produces no sound — even if the patch is saved or routing rules exist.
 
 
 ----
-# Find your sound device
-
-- type: aplay -l
-
-- find the card of your speaker. shoudl be something like:
-
-card 2: headphones [bcm2835 headphones], device 0: bcm2835 headphones subdevices: 8/8
-
-- Identify the card corresponding to your speaker if needed for troubleshooting. No further action here. 
-
-----
-# Configurating qpwgraph 
-
-- Plug your speaker to the Raspberry Pi Model4B jack output.
+# CONFIGURATING QPWGRAPGH 
   
-- Run your Sonic-Pi App. Sonic-Pi needs to be running to configure the route from qpwgraph to the speakers.
+- Make sure Sonic Pi is running, as SuperCollider must be active for qpwgraph to detect its audio nodes.
 
-- Select the Raspberry Pi icon at the top-left of your Desktop
+- Clicl the Raspberry Pi icon at the top-left of your Desktop.
 
-- Select *Sound & Video*
+- Select *Sound & Video* > *qpwgraph*
 
-- Select *qpwgraph*
+- A new window will open displaying audio nodes. This is qpwgraph.
 
-- A new software should open. This is qpwgraph.
+- Link the ***SuperCollider*** node to ***Build-in Audio Stereo***. Watch [this video for further help](https://www.youtube.com/watch?v=d5MhUZHZ1uw)
 
-- Link ***SuperCollider*** to ***Build-in Audio Stereo***
+- Without closing *qpwgraph*, go back to Sonic Pi and play any sounds.
 
-- Without closing *qpwgraph*, go back to SonicPi and play any sounds. Your speaker should be reproducing the sounds now. 
- 
-- If you need further help, please watch [this video tutorial](https://www.youtube.com/watch?v=d5MhUZHZ1uw)
+- You should now hear the audio through your speakers.
+
+
+**IMPORTANT NOTE!!**
+
+You will need to link SuperCollider to your speakers *every time* you use Sonic Pi.
+
+To avoid doing this manually each time, you can *automate* the process. Follow the steps below to set this up.
 
 ----
 # Saving a qpwgraph route
 
-- Create a folder called qpwgraph, located at .config
+- Go back to the Terminal and create a folder named qpwgraph inside your .config directory:
 
-- one you have linked the Super coliider block to your speakers, go to Patchbay > SAve As...
+          mkdir -p ~/.config/qpwgraph
 
-- name your file sonicpi-headphones.qpwgraph
+- If you closed Sonic Pi, open it again and link the audio nodes in the qpwgraph App, so you hear the sounds. 
 
-- save the file in the .config/qpwgraph folder your just created
+- In the qpwgraph App, go to the menu
+
+          Patchbay → Save As…
+
+- Before saving, we need to locate out saving folder as follows:
+
+          - Right click on the saving window > Show hidden files
+
+          - More folders should had appeared. Navigate to your now visible *.config > qpwgraph*
+
+- Name the file:
+
+          sonicpi-headphones.qpwgraph
+
+- Save
+
+- Close Sonic Pi and qpwgraph
   
 ----
 # Automate qpwgraph + SonicPi at launch
 
+- Open the Terminal
+
 - Create an autostart file:
 
-  ```
-  mkdir -p ~/.config/autostart
-  nano ~/.config/autostart/sonicpi-qpwgraph.desktop
-  ```
+        mkdir -p ~/.config/autostart
+        nano ~/.config/autostart/sonicpi-qpwgraph.desktop
 
-- Tyope the following in it:
-```
-[Desktop Entry]
-Type=Application
-Name=Sonic Pi + Patchbay
-Exec=qpwgraph --load /home/pi/.config/qpwgraph/sonicpi-headphones.qpwgraph & sonic-pi
-X-GNOME-Autostart-enabled=true
-```
+- Type the following in it:
+
+        [Desktop Entry]
+        Type=Application
+        Name=Sonic Pi + Patchbay
+        Exec=qpwgraph --load /home/pi/.config/qpwgraph/sonicpi-headphones.qpwgraph & sonic-pi
+        X-GNOME-Autostart-enabled=true
 
 - save and exit
 
