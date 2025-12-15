@@ -3,10 +3,14 @@
 Follow the sound test instructions based on your Raspberry Pi model.
 
 ----
-# RPi 4B - Hardware
+# RPi 4B 
+
+- Your RPi Model4 has a headphone jack output. Plug a speaker to it. 
+
+
 
 ----
-# RPi 5 - Hardware
+# RPi 5 (Work-in-progress)
 
 - NO HEADPHONE JACK: The lastest RPi model5 doesn't have a jack output like previous models.
 
@@ -33,9 +37,7 @@ Follow the sound test instructions based on your Raspberry Pi model.
 
   - Open your terminal and type:
 
-    ```
-    aplay /usr/share/sounds/alsa/Front_Center.wav
-    ```
+      aplay /usr/share/sounds/alsa/Front_Center.wav
 
 - The Raspberry Pi should play a sound that says "Front Center."
  
