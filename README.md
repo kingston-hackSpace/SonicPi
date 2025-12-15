@@ -1,35 +1,41 @@
 # SonicPi
 
-Sonic Pi is an open source programming environment originally designed to explore and teach programming concepts within schools through the process of creating new sounds.
+**Sonic Pi** is an open source programming environment originally designed to explore and teach programming concepts within schools through the process of creating new sounds.
 
 It is also widely used by hobbyists, musicians, and educators for live coding performances, music composition, sound experimentation, and learning programming in a fun, interactive way.
 
 Visit [sonic-pi.net](https://sonic-pi.net/)
 
 ----
-# Test sound in yout Raspberry Pi
+# First steps:
 
-Before diving into audio programming, let's ensure your Raspberry Pi is outputting sound correctly. Please [follow this instructions](https://github.com/kingston-hackSpace/SonicPi/blob/main/TestingSound.md)
+- Turn on your Raspberry Pi, which should be connected to the internet.
 
-----
-First:
+- Open the terminal and type:
 
+        sudo apt update
 
+- Install PulseAudio utility tools:
 
+        sudo apt install pulseaudio-utils -y
+
+- Test audio:
+
+        paplay /usr/share/sounds/alsa/Front_Center.wav
+
+- The Raspberry Pi should play a sound that says "Front Center."
 
 
 ----
 # Install SonicPi for RASPBERRY PI 
 
-- Run your Raspberry Pi, which should be also connected to the internet.
+- Open this tutorial directly in your RPi's browser
 
-- sudo apt update
+- Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb)
 
-- sudo apt install pulseaudio-utils
+- Open File Manager (the yelow folder icon located at the top left of the screen)
 
-- Download the SonicPi 64bi-package using [this link](https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb). Last update: Dec 2025.
-
-- Open the yelow folder located at the top left of the screen, locate *Downloads*
+- Locate the *Downloads* directory
 
 - In your Downloads, you should see a .zip file titled "sonic-pi_4.6.0_2_trixie.arm64.deb"
 
