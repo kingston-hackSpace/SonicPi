@@ -73,7 +73,7 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 
 ----
-# CONFIGURATING QPWGRAPGH 
+# CONFIGURATING qpwgraph
   
 - Make sure Sonic Pi is running, as SuperCollider must be active for qpwgraph to detect its audio nodes.
 
@@ -99,21 +99,23 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 ----
 # Saving a qpwgraph route
 
-- Go back to the Terminal and create a folder named qpwgraph inside your .config directory:
+- Open the Terminal and create a folder named **qpwgraph** inside your .config directory:
 
           mkdir -p ~/.config/qpwgraph
 
-- If you closed Sonic Pi, open it again and link the audio nodes in the qpwgraph App, so you hear the sounds. 
+- If you closed Sonic Pi, open it again and link the audio nodes in the qpwgraph App, so you hear the sound coming from the speaker. 
 
 - In the qpwgraph App, go to the menu
 
+          Patchbay → Activated
+
           Patchbay → Save As…
 
-- Before saving, we need to locate out saving folder as follows:
+- In the Save window:
 
-          - Right click on the saving window > Show hidden files
+          - Right click on the saving window and select **Show hidden files**
 
-          - More folders should had appeared. Navigate to your now visible *.config > qpwgraph*
+          - More folders should now appear. Navigate to **.config > qpwgraph**
 
 - Name the file:
 
@@ -124,16 +126,16 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 - Close Sonic Pi and qpwgraph
   
 ----
-# Automate qpwgraph + SonicPi at launch
+# Automate qpwgraph + Sonic Pi at Launch
 
 - Open the Terminal
 
-- Create an autostart file:
+- Create an autostart directory and file:
 
         mkdir -p ~/.config/autostart
         nano ~/.config/autostart/sonicpi-qpwgraph.desktop
 
-- Type the following in it:
+- Copy/Paste the following content in it:
 
         [Desktop Entry]
         Type=Application
@@ -141,9 +143,16 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
         Exec=qpwgraph --load /home/pi/.config/qpwgraph/sonicpi-headphones.qpwgraph & sonic-pi
         X-GNOME-Autostart-enabled=true
 
-- save and exit
+- Save and Exit:
+        Save: Ctrl + O → Enter
+        Exit: Ctrl + X
 
-- reboot the pi
+- Reboot the RPi:
 
-- on terminal, type: `qpwgraph & sleep 1; sonic-pi
-  
+        sudo reboot
+
+- The following command (to type in the Terminal) will allow you to open Sonic Pi with a loaded qpwgrapgh route. 
+
+          qpwgraph & sleep 1; sonic-pi
+
+- If you run any sounds in Sonic Pi now, it should automatically output through your speakers.
