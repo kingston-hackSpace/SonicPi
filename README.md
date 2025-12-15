@@ -113,9 +113,9 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 
 - In the Save window:
 
-          - Right click on the saving window and select **Show hidden files**
+  - Right click on the saving window and select ***Show hidden files***
 
-          - More folders should now appear. Navigate to **.config > qpwgraph**
+  - More folders should now appear. Navigate to ***.config > qpwgraph***
 
 - Name the file:
 
