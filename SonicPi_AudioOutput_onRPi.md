@@ -4,14 +4,14 @@
 Set your audio output for Sonic Pi on a RPi
 
 ----
-# HDMI output
+### HDMI output
 
 - By default, Sonic Pi outputs audio through HDMI. If your monitor has built-in speakers, you will hear the sound there.
 
 - If you want to use external speakers via the Raspberry Pi’s 3.5 mm jack, additional setup is required.
   
 ----
-# CHANGING THE AUDIO OUTPUT PATH
+### CHANGING THE AUDIO OUTPUT PATH
 
 - Sonic Pi relies on [SuperCollider](https://supercollider.github.io/) to generate audio. On recent Raspberry Pi OS versions, SuperCollider may not automatically find a playable output. To route audio to your speakers, you need to configure the output manually using **qpwgraph**. Read more [here](https://sonic-pi.net/files/releases/v4.5.0/README-Sonic-Pi-Raspberry-Pi-OS.txt)
 
@@ -26,7 +26,7 @@ Set your audio output for Sonic Pi on a RPi
 
 
 ----
-# CONFIGURATING qpwgraph
+### CONFIGURATING qpwgraph
   
 - Make sure Sonic Pi is running, as SuperCollider must be active for qpwgraph to detect its audio nodes.
 
@@ -50,7 +50,7 @@ You will need to link SuperCollider to your speakers *every time* you use Sonic 
 To avoid doing this manually each time, you can *automate* the process. Follow the steps below to set this up.
 
 ----
-# Saving a qpwgraph route
+### Saving a qpwgraph route
 
 - Open the Terminal and create a folder named **qpwgraph** inside your .config directory:
 
@@ -79,7 +79,7 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 - Close Sonic Pi and qpwgraph
   
 ----
-# Automate qpwgraph + Sonic Pi at Launch
+### Automate qpwgraph + Sonic Pi at Launch
 
 - Open the Terminal
 
