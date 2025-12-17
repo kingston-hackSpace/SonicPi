@@ -9,3 +9,7 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 Installation instructions [here](https://github.com/kingston-hackSpace/SonicPi/blob/main/Installing_SonicPi_onRPi.md)
 
+----
+# Sonic Pi Audio Output
+
+Set your audio output for Sonic Pi on a RPi [here]
