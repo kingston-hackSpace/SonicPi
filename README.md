@@ -20,3 +20,5 @@ Setting up audio output on a RPi, instructions [here](https://github.com/kingsto
 Step 1 : Installing basic dependancies. Instructions [here](https://github.com/kingston-hackSpace/OSC__RaspberryPi)
 
 Step 2 : Read more [here](https://github.com/sonic-pi-net/sonic-pi/blob/dev/etc/doc/tutorial/12.1-Receiving-OSC.md)
+
+Step 3 : Example [here]
