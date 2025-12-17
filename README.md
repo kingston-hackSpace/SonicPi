@@ -11,15 +11,15 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 - Open the terminal and type:
 
-        sudo apt update
+`sudo apt update`
 
 - Install PulseAudio utility tools:
 
-        sudo apt install pulseaudio-utils -y
+`sudo apt install pulseaudio-utils -y`
 
 - Test audio:
 
-        paplay /usr/share/sounds/alsa/Front_Center.wav
+`paplay /usr/share/sounds/alsa/Front_Center.wav`
 
 - The Raspberry Pi should play a sound that says "Front Center."
 
@@ -43,7 +43,7 @@ Visit [sonic-pi.net](https://sonic-pi.net/)
 
 - Open Sonic Pi using the Terminal by typing:
 
-          sonic-pi
+`sonic-pi`
   
 - Test Sonic Pi.
 
@@ -101,7 +101,7 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 
 - Open the Terminal and create a folder named **qpwgraph** inside your .config directory:
 
-          mkdir -p ~/.config/qpwgraph
+`mkdir -p ~/.config/qpwgraph`
 
 - If you closed Sonic Pi, open it again and link the audio nodes in the qpwgraph App, so you hear the sound coming from the speaker. 
 
@@ -119,7 +119,7 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 
 - Name the file:
 
-          sonicpi-headphones.qpwgraph
+`sonicpi-headphones.qpwgraph`
 
 - Save
 
@@ -132,16 +132,20 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 
 - Create an autostart directory and file:
 
-        mkdir -p ~/.config/autostart
-        nano ~/.config/autostart/sonicpi-qpwgraph.desktop
+```
+mkdir -p ~/.config/autostart
+nano ~/.config/autostart/sonicpi-qpwgraph.desktop
+```
 
 - Copy/Paste the following content in it:
 
-        [Desktop Entry]
-        Type=Application
-        Name=Sonic Pi + Patchbay
-        Exec=qpwgraph --load /home/pi/.config/qpwgraph/sonicpi-headphones.qpwgraph & sonic-pi
-        X-GNOME-Autostart-enabled=true
+```
+[Desktop Entry]
+Type=Application
+Name=Sonic Pi + Patchbay
+Exec=qpwgraph --load /home/pi/.config/qpwgraph/sonicpi-headphones.qpwgraph & sonic-pi
+X-GNOME-Autostart-enabled=true
+```
 
 - Save and Exit:
         Save: Ctrl + O → Enter
@@ -149,10 +153,10 @@ To avoid doing this manually each time, you can *automate* the process. Follow t
 
 - Reboot the RPi:
 
-        sudo reboot
+`sudo reboot`
 
 - The following command (to type in the Terminal) will allow you to open Sonic Pi with a loaded qpwgrapgh route. 
 
-          qpwgraph & sleep 1; sonic-pi
+`qpwgraph & sleep 1; sonic-pi`
 
 - If you run any sounds in Sonic Pi now, it should automatically output through your speakers.
