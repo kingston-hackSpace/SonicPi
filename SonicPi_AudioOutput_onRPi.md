@@ -1,7 +1,5 @@
 ----
-# Sonic Pi Audio Output
-
-Set your audio output for Sonic Pi on a RPi
+# Sonic Pi - SetUp Audio Output
 
 ----
 ### HDMI output
