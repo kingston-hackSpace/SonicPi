@@ -12,11 +12,11 @@ Installation instructions [here](https://github.com/kingston-hackSpace/SonicPi/b
 ----
 # Sonic Pi Audio Output
 
-Setup the audio output for Sonic Pi on a RPi [here](https://github.com/kingston-hackSpace/SonicPi/blob/main/SonicPi_AudioOutput_onRPi.md)
+Setting up audio output on a RPi, instructions [here](https://github.com/kingston-hackSpace/SonicPi/blob/main/SonicPi_AudioOutput_onRPi.md)
 
 ----
 # Sonic Pi + OSC
 
-Step1 : Installing basic dependancies. Follow [this instructions](https://github.com/kingston-hackSpace/OSC__RaspberryPi)
+Step 1 : Installing basic dependancies. Instructions [here](https://github.com/kingston-hackSpace/OSC__RaspberryPi)
 
-Step 2: work-in-progress
+Step 2 : work-in-progress
