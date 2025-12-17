@@ -21,4 +21,4 @@ Step 1 : Installing basic dependancies. Instructions [here](https://github.com/k
 
 Step 2 : Read more [here](https://github.com/sonic-pi-net/sonic-pi/blob/dev/etc/doc/tutorial/12.1-Receiving-OSC.md)
 
-Step 3 : Example [here]
+Step 3 : Example [here](https://github.com/kingston-hackSpace/SonicPi/blob/main/OSC_example.md)
